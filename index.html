@@ -23,18 +23,19 @@
   <section class="sobre">
     <h2>Sobre o Advogado</h2>
     <p>
-      O <strong>Luiz Felipe Segalin</strong> possui mais de 10 anos de experiência, atuando com ética,
-      responsabilidade e compromisso em defesa dos interesses de seus clientes. Formado pela
-      Universidade Federal de São Paulo, é especialista em causas cíveis, trabalhistas e empresariais.
+      O <strong>Luiz Felipe Segalin</strong> textotextotextotextotextotextotextotextotextotexttextotextotextotextotextotextotextotextotextotex
+      totextotextotextotextotextotextotextotextotextotextotextotextotextotextotextotextotextotextotextotextotextotextotextotextotextotext
+      otextotextotextotexto
     </p>
   </section>
 
   <section class="diferenciais">
     <h2>Diferenciais</h2>
     <p>
-      Nosso compromisso é oferecer um atendimento personalizado, entendendo a necessidade de cada cliente.
-      Prezamos pela transparência, excelência e soluções jurídicas práticas, garantindo segurança e confiança
-      em cada passo do processo.
+      textotextotextotextotextotextotextotextotextotextotextotextotextotextotextotextotextot
+      extotextotextotextotextotextotextotextotextotextotextotextotextotextotextotextotextotext
+      otextotextotextotextotextotextotextotextotextotextotextotextotextotextotextotextotextote
+      xtotextotextotextotextotextotextotextotextotextotextotextotextotextotextotextotextotexto
     </p>
   </section>
 
@@ -42,53 +43,33 @@
     <h2>Áreas de Atuação</h2>
     <div class="cards">
       <div class="card">
-        <h3>Direito Civil</h3>
-        <p>Contratos, indenizações, responsabilidade civil e direito do consumidor.</p>
+        <h3>Exemplo de área de atuação</h3>
+        <p>textotextotextotextotextotextotextotextotextotexto</p>
       </div>
       <div class="card">
-        <h3>Direito Trabalhista</h3>
-        <p>Defesa de empregados e empregadores, ações trabalhistas e consultoria preventiva.</p>
+        <h3>Exemplo de área de atuação</h3>
+        <p>textotextotextotextotextotextotextotextotextotexto</p>
       </div>
       <div class="card">
-        <h3>Direito Empresarial</h3>
-        <p>Assessoria jurídica, elaboração de contratos e recuperação de crédito.</p>
+        <h3>Exemplo de área de atuação</h3>
+        <p>textotextotextotextotextotextotextotextotextotexto</p>
       </div>
     </div>
   </section>
+  <section id="contato" class="contato">
+     <h2>Entre em Contato</h2>
+  <p>Envie sua mensagem para agendar uma consulta ou esclarecer dúvidas.</p>
 
-<!-- Formulário de Contato -->
-<section id="contato" class="contato">
-  <h2>Entre em Contato</h2>
-  <p>Envie sua mensagem para agendar uma consulta ou esclarecer dúvidas.</p>
+  <form action="enviarbanco.php" method="POST" enctype="application/x-www-form-urlencoded">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome" required>
 
-  <form id="formContato">
-    <label for="nome">Nome:</label>
-    <input type="text" id="nome" name="nome" required>
+    <label for="email">E-mail:</label>
+    <input type="email" id="email" name="email" required>
 
-    <label for="email">E-mail:</label>
-    <input type="email" id="email" name="email" required>
+    <label for="mensagem">Mensagem:</label>
+    <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
 
-    <label for="mensagem">Mensagem:</label>
-    <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
-
-    <button type="submit" class="btn">Enviar Mensagem</button>
-  </form>
+    <button type="submit" class="btn">Enviar Mensagem</button>
+  </form>
 </section>
-
-<div id="notificacao" class="notificacao">Mensagem enviada com sucesso!</div>
-
-<script>
-  const form = document.getElementById('formContato');
-  const notificacao = document.getElementById('notificacao');
-
-  form.addEventListener('submit', function(e){
-    e.preventDefault(); // impede recarregar a página
-    notificacao.classList.add('mostrar');
-
-    form.reset();
-
-    setTimeout(() => {
-      notificacao.classList.remove('mostrar');
-    }, 3000);
-  });
-</script>
