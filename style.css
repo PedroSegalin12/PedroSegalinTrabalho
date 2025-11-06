@@ -1,4 +1,3 @@
-/* Reseta margens e fontes */
 * {
   margin: 0;
   padding: 0;
@@ -12,7 +11,6 @@ body {
   line-height: 1.6;
 }
 
-/* Cabeçalho com foto maior */
 .header {
   background-color: #1c2a4a;
   padding: 2rem 1rem;
@@ -28,7 +26,7 @@ body {
 }
 
 .foto-advogado {
-  width: 200px;   /* foto maior */
+  width: 200px;
   height: 200px;
   border-radius: 50%;
   object-fit: cover;
@@ -46,7 +44,6 @@ body {
   color: #f0f0f0;
 }
 
-/* Botão */
 .btn {
   background: #f4d03f;
   color: #1c2a4a;
@@ -80,7 +77,6 @@ body {
   background: #d4b537;
 }
 
-/* Seções */
 section {
   max-width: 1000px;
   margin: 2rem auto;
@@ -95,15 +91,12 @@ section h2 {
   color: #1c2a4a;
   margin-bottom: 1rem;
 }
-
-/* Diferenciais */
 .diferenciais p {
   text-align: center;
   font-size: 1.05rem;
   color: #444;
 }
 
-/* Áreas de atuação */
 .cards {
   display: flex;
   justify-content: space-around;
@@ -131,8 +124,6 @@ section h2 {
   margin-bottom: 0.8rem;
   color: #f4d03f;
 }
-
-/* Contato */
 .contato p {
   text-align: center;
   margin-bottom: 1rem;
@@ -162,7 +153,6 @@ textarea {
   resize: none;
 }
 
-/* Rodapé */
 footer {
   text-align: center;
   background: #1c2a4a;
@@ -180,7 +170,6 @@ footer a:hover {
   text-decoration: underline;
 }
 
-/* Responsivo */
 @media (max-width: 768px) {
   .header-content {
     flex-direction: column;
@@ -196,7 +185,7 @@ footer a:hover {
     width: 90%;
   }
 }
-/* Notificação central */
+
 .notificacao {
   position: fixed;
   top: 50%;
@@ -219,3 +208,18 @@ footer a:hover {
   opacity: 1;
   transform: translate(-50%, -50%) scale(1);
 }
+
+.whatsapp {
+    position: fixed; 
+    margin-right: 8px;
+    bottom: 20px;   
+    right: 20px;     
+    z-index: 9999;
+    background-color: #25d366; 
+    color: white;
+    padding: 27px 40px;
+    font-size: 16px;
+    font-weight: bold;  
+    border-radius: 40px;
+}
+
