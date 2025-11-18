@@ -185,6 +185,48 @@ footer a:hover {
     width: 90%;
   }
 }
+form {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+    margin-top: 15px;
+    font-weight: 600;
+    color: var(--cor-texto-escuro, #333); 
+}
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    transition: border-color 0.3s;
+}
+
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+input:focus,
+textarea:focus {
+    border-color: var(--cor-secundaria, #f4d03f);
+    outline: none;
+}
+.btn {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+}
 
 .notificacao {
   position: fixed;
@@ -203,12 +245,6 @@ footer a:hover {
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
   transition: all 0.4s ease;
 }
-
-.notificacao.mostrar {
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(1);
-}
-
 .whatsapp {
     position: fixed; 
     margin-right: 8px;
@@ -222,4 +258,7 @@ footer a:hover {
     font-weight: bold;  
     border-radius: 40px;
 }
-
+.notificacao.mostrar {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
