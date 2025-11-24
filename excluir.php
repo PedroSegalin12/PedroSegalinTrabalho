@@ -1,5 +1,4 @@
 <?php
-// Arquivo: excluir.php
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
@@ -19,8 +18,6 @@ if (!$id) {
 try {
     $conexao = new Conexao();
     $usuarioModel = new UsuarioModel($conexao);
-
-    // Chama o método deletar
     if ($usuarioModel->deletar($id)) {
         header("Location: admin_painel.php?status=success_delete");
     } else {

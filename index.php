@@ -3,22 +3,16 @@
 require_once "config.php";
 require_once "usuarioModel.php";
 
-// INÍCIO DO PROCESSAMENTO DO FORMULÁRIO
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    
-    // 1. Recebe os dados do formulário
     $nome = $_POST['nome'] ?? '';
     $email = $_POST['email'] ?? '';
     $mensagem = $_POST['mensagem'] ?? '';
-
-    // 2. Tenta inserir no banco
     if (!empty($nome) && !empty($email) && !empty($mensagem)) {
         try {
             $conexao = new Conexao();
             $usuarioModel = new UsuarioModel($conexao);
 
             if ($usuarioModel->inserir($nome, $email, $mensagem)) {
-                // Sucesso: Exibe mensagem na mesma página e limpa o POST
                 $status_msg = "Sua mensagem foi enviada com sucesso!";
                 $status_class = "success";
             } else {
@@ -49,18 +43,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
 
-  <!-- Cabeçalho -->
-  <header class="header">
+<header class="header">
     <div class="header-content">
-      <img src="lipe1.jpg" alt="Foto do Dr. João Silva" class="foto-advogado">
-      <div class="info-advogado">
-        <h1>Luiz Felipe Segalin</h1>
-        <p>Advogado Especialista em Contratos</p>
-        <a href="#contato" class="btn">Agende uma consulta</a>
-          <p><a href="admin_login.php" class="btn-admin">Acesso Admin</a></p>
-      </div>
+        <img src="lipe1.jpg" alt="Foto do Dr. João Silva" class="foto-advogado">
+        <div class="info-advogado">
+            <h1>Luiz Felipe Segalin</h1>
+            <p>Advogado Especialista em Contratos</p>
+            <a href="#contato" class="btn">Agende uma consulta</a>
+            </div>
     </div>
-  </header>
+    
+    <a href="admin_login.php" class="btn btn-admin-pos">Acesso Admin</a> 
+</header>
 
   <section class="sobre">
 

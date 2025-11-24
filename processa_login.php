@@ -1,5 +1,4 @@
 <?php
-// Inicia a sessão para armazenar o status do login
 session_start();
 
 require_once "config.php";

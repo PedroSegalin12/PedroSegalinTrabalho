@@ -1,5 +1,4 @@
 <?php
-// Arquivo: editar.php
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
@@ -19,8 +18,6 @@ if (!$id) {
 try {
     $conexao = new Conexao();
     $usuarioModel = new UsuarioModel($conexao);
-
-    // O método buscarPorId já está corrigido para buscar na tabela 'mensagens'
     $registro = $usuarioModel->buscarPorId($id); 
 
     if (!$registro) {
@@ -36,24 +33,30 @@ try {
 <head>
     <meta charset="UTF-8">
     <title>Editar Registro</title>
-    <link rel="stylesheet" href="editar.css">
-</head>
+    <link rel="stylesheet" href="styleeditar.css">
+    </head>
 <body>
-    <h2>Editar Registro</h2>
-    <form method="POST" action="salvar_edicao.php">
-        <input type="hidden" name="id" value="<?php echo htmlspecialchars($registro['id']); ?>">
-        
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" value="<?php echo htmlspecialchars($registro['nome']); ?>" required><br><br>
+    <div class="container-principal">
+        <div class="titulo-e-link">
+            <h2 class="titulo-editar">Editar Registro</h2>
 
-        <label for="email">E-mail:</label>
-        <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($registro['email']); ?>" required><br><br>
-        
-        <label for="mensagem">Mensagem:</label>
-        <textarea id="mensagem" name="mensagem" rows="4" required><?php echo htmlspecialchars($registro['mensagem']); ?></textarea><br><br>
+        </div> 
 
-        <button type="submit">Salvar Alterações</button>
-    </form>
-    <p><a href="admin_painel.php">Voltar</a></p>
+        <form method="POST" action="salvar_edicao.php">
+            <input type="hidden" name="id" value="<?php echo htmlspecialchars($registro['id']); ?>">
+            
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" value="<?php echo htmlspecialchars($registro['nome']); ?>" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($registro['email']); ?>" required>
+            
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" rows="4" required><?php echo htmlspecialchars($registro['mensagem']); ?></textarea>
+
+            <button type="submit">Salvar Alterações</button>
+                        <a href="admin_painel.php" class="link-voltar">Voltar</a>
+        </form>
+    </div>
 </body>
 </html>

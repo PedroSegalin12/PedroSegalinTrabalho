@@ -1,5 +1,4 @@
 <?php
-// Arquivo: salvar_edicao.php
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
@@ -12,7 +11,7 @@ require_once "usuarioModel.php";
 $id = $_POST['id'] ?? null;
 $nome = $_POST['nome'] ?? '';
 $email = $_POST['email'] ?? '';
-$mensagem = $_POST['mensagem'] ?? ''; // NOVO: Captura a mensagem
+$mensagem = $_POST['mensagem'] ?? '';
 
 if (empty($id) || empty($nome) || empty($email) || empty($mensagem)) {
     header("Location: admin_painel.php?status=error_empty");
@@ -22,8 +21,6 @@ if (empty($id) || empty($nome) || empty($email) || empty($mensagem)) {
 try {
     $conexao = new Conexao();
     $usuarioModel = new UsuarioModel($conexao);
-
-    // Chama o método atualizar com a MENSAGEM
     if ($usuarioModel->atualizar($id, $nome, $email, $mensagem)) {
         header("Location: admin_painel.php?status=success_update");
     } else {

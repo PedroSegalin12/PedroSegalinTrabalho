@@ -1,7 +1,6 @@
 <?php
-// Arquivo: admin_painel.php
 require_once "funcoes_admin.php";
-protegerPagina(); // Protege a página
+protegerPagina();
 
 require_once "config.php";
 require_once "usuarioModel.php";

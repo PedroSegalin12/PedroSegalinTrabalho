@@ -8,11 +8,8 @@ class UsuarioModel {
         $this->conexao = $conexao->conectar();
     }
 
-// Arquivo: usuarioModel.php (Método inserir)
-
 public function inserir($nome, $email, $mensagem) {
     try {
-        // MUITO IMPORTANTE: Garanta que 'data_envio' é o nome da coluna de data
         $query = "INSERT INTO mensagens (nome, email, mensagem, data_envio) 
                   VALUES (:nome, :email, :mensagem, NOW())";
         
@@ -25,8 +22,6 @@ public function inserir($nome, $email, $mensagem) {
         return $stmt->execute();
 
     } catch (PDOException $e) {
-        // Se este bloco de código for descomentado, ele mostrará o erro SQL exato
-        // die("ERRO NA QUERY INSERIR: " . $e->getMessage()); 
         return false;
     }
 }
@@ -46,8 +41,6 @@ public function listar() {
 
     public function buscarPorId($id) {
     try {
-        // CORRIGIDO: nome_da_tabela -> mensagens
-        // CORRIGIDO: Adicionando 'mensagem'
         $query = 'SELECT id, nome, email, mensagem FROM mensagens WHERE id = :id'; 
         $stmt = $this->conexao->prepare($query);
         $stmt->bindValue(':id', $id);
@@ -59,16 +52,14 @@ public function listar() {
     }
 }
 
- public function atualizar($id, $nome, $email, $mensagem) { // NOVO: Adicione $mensagem aqui
+ public function atualizar($id, $nome, $email, $mensagem) {
     try {
-        // CORRIGIDO: nome_da_tabela -> mensagens
-        // CORRIGIDO: Adicionando 'mensagem'
         $query = "UPDATE mensagens SET nome = :nome, email = :email, mensagem = :mensagem WHERE id = :id";
         $stmt = $this->conexao->prepare($query);
         $stmt->bindValue(':id', $id);
         $stmt->bindValue(':nome', $nome);
         $stmt->bindValue(':email', $email);
-        $stmt->bindValue(':mensagem', $mensagem); // Novo bind
+        $stmt->bindValue(':mensagem', $mensagem);
         return $stmt->execute();
     } catch (PDOException $e) {
         echo 'Erro ao atualizar: ' . $e->getMessage();
@@ -78,7 +69,6 @@ public function listar() {
 
  public function deletar($id) {
     try {
-        // CORRIGIDO: nome_da_tabela -> mensagens
         $query = 'DELETE FROM mensagens WHERE id = :id';
         $stmt = $this->conexao->prepare($query);
         $stmt->bindValue(':id', $id);
@@ -92,18 +82,14 @@ public function listar() {
 
 public function verificarAdmin($email, $senha) {
     try {
-        // Altere 'usuarios_admin' para o nome da sua tabela de admin
         $query = 'SELECT id, email, senha FROM usuarios_admin WHERE email = :email AND senha = :senha';
         $stmt = $this->conexao->prepare($query);
         $stmt->bindValue(':email', $email);
         $stmt->bindValue(':senha', $senha);
         $stmt->execute();
-        
-        // Retorna o usuário se encontrado, ou false se não
         return $stmt->fetch(PDO::FETCH_ASSOC);
 
     } catch (PDOException $e) {
-        // Em caso de erro, você pode querer logar ou simplesmente retornar false
         return false;
     }
 }

@@ -262,3 +262,15 @@ textarea:focus {
   opacity: 1;
   transform: translate(-50%, -50%) scale(1);
 }
+.header {
+    background-color: #1a237e; 
+    color: white;
+    padding: 40px 0;
+    position: relative; 
+}
+.btn-admin-pos {
+    position: absolute; 
+    top: 20px;
+    right: 20px;
+    z-index: 10; 
+}
